@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
-const mongodb = require("./src/database");
-const contactRoutes = require("./src/routes/contactRoutes");
+const mongodb = require("./database");
+const contactRoutes = require("./routes/contactRoutes");
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
