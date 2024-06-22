@@ -34,6 +34,7 @@ To get started with Contacts Store, follow these steps:
 To start the application, use the following command:
 ```bash
 npm start
+```
 
 The application will run on [http://localhost:8080](http://localhost:8080) by default.
 
