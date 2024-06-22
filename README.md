@@ -42,8 +42,8 @@ The application will run on [http://localhost:8080](http://localhost:8080) by de
 
 Here are the available API endpoints:
 
-- **GET** `/api/contacts` - Retrieve all contacts.
-- **GET** `/api/contacts/:id` - Retrieve a contact by ID.
+- **GET** `/contacts` - Retrieve all contacts.
+- **GET** `/contacts/:id` - Retrieve a contact by ID.
 
 
 ## Documentation
