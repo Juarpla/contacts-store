@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
-const mongodb = require("./database");
+const database = require("./database");
 const contactRoutes = require("./routes/contactRoutes");
 
-mongodb.initDb((err, mongodb) => {
+database.initDb((err, db) => {
   if (err) {
     console.log(err);
   } else {
@@ -12,7 +12,9 @@ mongodb.initDb((err, mongodb) => {
   }
 });
 
-app.get("/", (req, res) => { res.send("Welcome to Juan Plasencia's Contacts Project"); });
+app.get("/", (req, res) => {
+  res.send("Welcome to Juan Plasencia's Contacts Project");
+});
 app.use("/contacts", contactRoutes);
 
 const port = process.env.PORT || 8080;

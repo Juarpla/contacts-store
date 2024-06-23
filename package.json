@@ -5,7 +5,9 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "lint": "eslint src/**/*.js",
+    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\""
   },
   "keywords": [],
   "author": "Juan Plasencia",
@@ -17,6 +19,11 @@
     "mongodb": "^6.7.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.3"
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "nodemon": "^3.1.3",
+    "prettier": "^3.3.2"
   }
 }

@@ -1,0 +1,9 @@
+// RENDER.COM
+### GET all contacts
+GET https://contacts-store.onrender.com/contacts
+
+### GET contact by id
+GET https://contacts-store.onrender.com/contacts/666e9b6ee9aaaa2553b0c72d
+
+### GET contact by id
+GET https://contacts-store.onrender.com/contacts/666e9b6ee9aaaa2553b0c72e
