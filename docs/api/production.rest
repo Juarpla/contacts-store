@@ -1,9 +1,36 @@
 // RENDER.COM
 ### GET all contacts
-GET https://contacts-store.onrender.com/contacts
+GET https://contacts-store.onrender.com/contacts HTTP/3.0
 
 ### GET contact by id
-GET https://contacts-store.onrender.com/contacts/666e9b6ee9aaaa2553b0c72d
+GET https://contacts-store.onrender.com/contacts/666e9b6ee9aaaa2553b0c72d HTTP/3.0
 
 ### GET contact by id
-GET https://contacts-store.onrender.com/contacts/666e9b6ee9aaaa2553b0c72e
+GET https://contacts-store.onrender.com/contacts/666e9b6ee9aaaa2553b0c72e HTTP/3.0
+
+### POST save a contact
+POST http://contacts-store.onrender.com/contacts HTTP/3.0
+Content-Type: application/json
+
+{
+  "firstName":"Juan",
+  "lastName":"Carlo",
+  "email":"jcarlo@byui.com",
+  "favoriteColor":"green",
+  "birthday":"2001-09-09"
+}
+
+### PUT update a contact
+PUT http://contacts-store.onrender.com/contacts/666e9b6ee9aaaa2553b0c730 HTTP/3.0
+Content-Type: application/json
+
+{
+  "firstName":"Ariel",
+  "lastName":"Fox",
+  "email":"afox@byui.com",
+  "favoriteColor":"blue",
+  "birthday":"2001-12-05"
+}
+
+### DELETE delete a contact
+DELETE http://contacts-store.onrender.com/contacts/666e9b6ee9aaaa2553b0c72e HTTP/3.0

@@ -37,7 +37,58 @@ async function getContactById(contactId) {
   }
 }
 
+async function registerContact(newContact) {
+  try {
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection("contact")
+      .insertOne(newContact);
+    console.log("executed query: " + registerContact.name);
+    return result;
+  } catch (error) {
+    console.error(
+      "Contact was not saved error " + registerContact.name + ", " + error,
+    );
+  }
+}
+
+async function updateContact(newContact, userId) {
+  try {
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection("contact")
+      .replaceOne({ _id: userId }, newContact);
+    console.log("executed query: " + updateContact.name);
+    return result;
+  } catch (error) {
+    console.error(
+      "Contact was not updated error " + updateContact.name + ", " + error,
+    );
+  }
+}
+
+async function deleteContact(userId) {
+  try {
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection("contact")
+      .deleteOne({ _id: userId });
+    console.log("executed query: " + updateContact.name);
+    return result;
+  } catch (error) {
+    console.error(
+      "Contact was not updated error " + updateContact.name + ", " + error,
+    );
+  }
+}
+
 module.exports = {
   getAllContacts,
   getContactById,
+  registerContact,
+  updateContact,
+  deleteContact,
 };

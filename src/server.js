@@ -3,6 +3,7 @@ const app = express();
 require("dotenv").config();
 const database = require("./database");
 const contactRoutes = require("./routes/contactRoutes");
+const bodyParser = require("body-parser");
 
 database.initDb((err, db) => {
   if (err) {
@@ -15,6 +16,9 @@ database.initDb((err, db) => {
 app.get("/", (req, res) => {
   res.send("Welcome to Juan Plasencia's Contacts Project");
 });
+
+app.use(bodyParser.json())
+
 app.use("/contacts", contactRoutes);
 
 const port = process.env.PORT || 8080;

@@ -28,4 +28,62 @@ contCont.getContactById = async (req, res, next) => {
   }
 };
 
+contCont.createContact = async (req, res) => {
+  const newContact = {
+    "firstName":req.body.firstName,
+    "lastName":req.body.lastName,
+    "email":req.body.email,
+    "favoriteColor":req.body.favoriteColor,
+    "birthday":req.body.birthday
+  }
+  const response = await contModel.registerContact(newContact);
+  if (response.acknowledged) {
+    res.status(201).json(response);
+  } else {
+    res
+      .status(500)
+      .json(
+        response.error ||
+          "Create contact response is not available, some error occurred",
+      );
+  }
+};
+
+contCont.updateContact = async (req, res) => {
+  const userId = ObjectId.createFromHexString(req.params.id);
+  const newContact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday,
+  };
+  const response = await contModel.updateContact(newContact, userId);
+  if (response.acknowledged) {
+    res.status(204).send();
+  } else {
+    res
+      .status(500)
+      .json(
+        response.error ||
+          "Update contact response is not available, some error occurred",
+      );
+  }
+};
+
+contCont.deleteContact = async (req, res) => {
+  const userId = ObjectId.createFromHexString(req.params.id);
+  const response = await contModel.deleteContact(userId);
+  if (response.acknowledged) {
+    res.status(204).send();
+  } else {
+    res
+      .status(500)
+      .json(
+        response.error ||
+          "Update contact response is not available, some error occurred",
+      );
+  }
+};
+
 module.exports = contCont;
