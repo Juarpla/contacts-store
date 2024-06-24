@@ -17,7 +17,7 @@ You can run these requests using tools like VS Code with the REST Client extensi
 
 ## Swagger JSON
 
-For detailed API specifications and schema definitions, refer to the `swagger.json` file located in the `swagger` folder.
+For detailed API specifications and schema definitions, refer to the `swagger.json` file located in the `/docs/swagger` folder.
 
 ## Setup and Installation
 

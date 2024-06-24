@@ -44,6 +44,9 @@ Here are the available API endpoints:
 
 - **GET** `/contacts` - Retrieve all contacts.
 - **GET** `/contacts/:id` - Retrieve a contact by ID.
+- **POST** `/contacts` - Register a new contact.
+- **PUT** `/contacts/:id` - Modify a contact by ID.
+- **DELETE** `/contacts/:id` - Delete a contact by ID.
 
 
 ## Documentation
