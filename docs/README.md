@@ -15,9 +15,9 @@ To interact with the API endpoints, you can use the following files provided in 
 
 You can run these requests using tools like VS Code with the REST Client extension or Postman.
 
-## Swagger YAML
+## Swagger JSON
 
-For detailed API specifications and schema definitions, refer to the `swagger.yaml` file located in the `swagger` folder.
+For detailed API specifications and schema definitions, refer to the `swagger.json` file located in the `swagger` folder.
 
 ## Setup and Installation
 

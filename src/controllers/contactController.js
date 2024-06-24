@@ -4,6 +4,7 @@ const ObjectId = require("mongodb").ObjectId;
 const contCont = {};
 
 contCont.getAllContacts = async (req, res, next) => {
+  //#swagger.tags=["Contacts"]
   const contactsData = await contModel.getAllContacts();
   if (contactsData[0].firstName) {
     return res
@@ -16,6 +17,7 @@ contCont.getAllContacts = async (req, res, next) => {
 };
 
 contCont.getContactById = async (req, res, next) => {
+  //#swagger.tags=["Contacts"]
   const contactId = ObjectId.createFromHexString(req.params.id);
   const contactData = await contModel.getContactById(contactId);
   if (contactData[0].firstName) {
@@ -29,13 +31,14 @@ contCont.getContactById = async (req, res, next) => {
 };
 
 contCont.createContact = async (req, res) => {
+  //#swagger.tags=["Contacts"]
   const newContact = {
-    "firstName":req.body.firstName,
-    "lastName":req.body.lastName,
-    "email":req.body.email,
-    "favoriteColor":req.body.favoriteColor,
-    "birthday":req.body.birthday
-  }
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday,
+  };
   const response = await contModel.registerContact(newContact);
   if (response.acknowledged) {
     res.status(201).json(response);
@@ -50,6 +53,7 @@ contCont.createContact = async (req, res) => {
 };
 
 contCont.updateContact = async (req, res) => {
+  //#swagger.tags=["Contacts"]
   const userId = ObjectId.createFromHexString(req.params.id);
   const newContact = {
     firstName: req.body.firstName,
@@ -72,6 +76,7 @@ contCont.updateContact = async (req, res) => {
 };
 
 contCont.deleteContact = async (req, res) => {
+  //#swagger.tags=["Contacts"]
   const userId = ObjectId.createFromHexString(req.params.id);
   const response = await contModel.deleteContact(userId);
   if (response.acknowledged) {
