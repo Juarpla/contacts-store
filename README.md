@@ -54,6 +54,7 @@ Here are the available API endpoints:
 You can find the API documentation at the following URL:
 [https://contacts-store.onrender.com/api-docs](https://contacts-store.onrender.com/api-docs)
 
+### API documented example uses (.rest)
 
 Also, it is possible to find .rest files to test the different end points with documented examples, in this path `/docs/api`:
 
