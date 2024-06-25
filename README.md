@@ -54,6 +54,12 @@ Here are the available API endpoints:
 You can find the API documentation at the following URL:
 [https://contacts-store.onrender.com/api-docs](https://contacts-store.onrender.com/api-docs)
 
+
+Also, it is possible to find .rest files to test the different end points with documented examples, in this path `/docs/api`:
+
+- **development** `/docs/api/development.rest` - with local host and development environment.
+- **production** `/docs/api/production.rest` - with render.com and production environment.
+
 ### Swagger Setup
 
 We use Swagger for API documentation. To view the Swagger UI locally, follow these steps:
