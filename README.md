@@ -60,7 +60,7 @@ Also, it is possible to find .rest files to test the different end points with d
 - **development** `/docs/api/development.rest` - with local host and development environment.
 - **production** `/docs/api/production.rest` - with render.com and production environment.
 
-### Swagger Setup
+## Swagger Setup
 
 We use Swagger for API documentation. To view the Swagger UI locally, follow these steps:
 
